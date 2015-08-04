@@ -203,7 +203,7 @@ class LiveStatusLogStoreMongoDB(BaseModule):
     def manage_log_brok(self, b):
         data = b.data
         line = data['log']
-        if re.match("^\[[0-9]*\] [A-Z][a-z]*.:", line):
+        if re.match("^\[[0-9]*\] [A-Z][a-z]*.:", line, re.I):
             # Match log which NOT have to be stored
             # print "Unexpected in manage_log_brok", line
             return
